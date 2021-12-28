@@ -5,7 +5,7 @@ public class Airplane {
     private int year;
     private int length;
     private int weight;
-    private int fuel = 0;
+    private int fuel;
 
     public void setProducer(String producer) {
         this.producer = producer;
@@ -40,8 +40,8 @@ public class Airplane {
         System.out.println("Изготовитель: " + producer + ", год выпуска: " + year + ", длина: " + length +
                 ", вес: " + weight + ", количество топлива в баке: " + fuel);
     }
-    public int fillUp(int n){
+    public void fillUp(int n){
         fuel += n;
-        return fuel;
+
     }
 }

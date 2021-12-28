@@ -5,6 +5,7 @@ import java.util.Random;
 public class Teacher {
     private String name;
     private String subject;
+    Random random = new Random();
 
     public Teacher(String name, String subject){
         this.name = name;
@@ -12,7 +13,6 @@ public class Teacher {
     }
 
     public void evaluate(Student student){
-        Random random = new Random();
         int grade = random.nextInt(4)+2;
         System.out.println(grade);
 
@@ -29,10 +29,10 @@ public class Teacher {
                 System.out.println("Преподаватель " + name + " оценил студента с именем " +
                         student.getName() + " по предмету " + subject + " на оценку хорошо.");
                 break;
-            case 5:
+            default:
                 System.out.println("Преподаватель " + name + " оценил студента с именем " +
                         student.getName() + " по предмету " + subject + " на оценку отлично.");
-                break;
+
         }
     }
 

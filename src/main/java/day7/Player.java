@@ -21,14 +21,14 @@ public class Player {
         return countPlayers;
     }
 
-    public int run(){
+    public void run(){
            if (this.stamina > 0) {
                this.stamina--;
                if (this.stamina == MIN_STAMINA) {
                    countPlayers--;
                }
            }
-        return countPlayers;
+
     }
     public static void info(){
         if (countPlayers < 6){
