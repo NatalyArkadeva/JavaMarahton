@@ -1,6 +1,6 @@
 package day11.task2;
 
-public abstract class Hero {
+public abstract class Hero implements PhysAttack {
     private int health;
     private int physDef;
     private int magicDef;
@@ -47,6 +47,12 @@ public abstract class Hero {
 
     public int getPhysAtt() {
         return physAtt;
+    }
+
+    @Override
+    public void physAttack(Hero hero) {
+        hero.setHealth(hero.getHealth() - this.getPhysAtt() * (100 - hero.getPhysDef()) / 100);
+        System.out.println(hero);
     }
 
     @Override

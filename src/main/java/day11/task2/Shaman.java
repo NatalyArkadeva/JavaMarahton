@@ -34,23 +34,20 @@ public class Shaman extends Hero implements Healer, PhysAttack, MagicAttack {
     @Override
     public void magicAttack(Hero hero) {
         hero.setHealth(hero.getHealth() - this.getMagicAtt() * (100 - hero.getMagicDef()) / 100);
-    }
-
-    @Override
-    public void physAttack(Hero hero) {
-        hero.setHealth(hero.getHealth() - this.getPhysAtt() * (100 - hero.getPhysDef()) / 100);
-
+        System.out.println(hero);
     }
 
     @Override
     public void healTeammate(Hero hero) {
         hero.setHealth(hero.getHealth() + this.getHealthHimself());
+        System.out.println(hero);
 
     }
 
     @Override
     public void healHimself() {
         this.setHealth(this.getHealth() + 50);
+        System.out.println(this);
 
     }
 

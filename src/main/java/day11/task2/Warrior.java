@@ -18,9 +18,5 @@ public class Warrior extends Hero implements PhysAttack {
         return "Warrior{health=" + this.getHealth() + "}";
     }
 
-    @Override
-    public void physAttack(Hero hero) {
-        hero.setHealth(hero.getHealth() - this.getPhysAtt() * (100 - hero.getPhysDef()) / 100);
 
-    }
 }

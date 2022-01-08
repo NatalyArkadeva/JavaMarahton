@@ -12,11 +12,11 @@ public class Warehouse {
         return countDeliveredOrders;
     }
 
-    public void countPickedOrders() {
+    public void incrementPickedOrders() {
         countPickedOrders++;
     }
 
-    public void countDeliveredOrders() {
+    public void incrementDeliveredOrders() {
         countDeliveredOrders++;
     }
 

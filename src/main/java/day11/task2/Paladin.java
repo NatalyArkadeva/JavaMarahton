@@ -1,9 +1,9 @@
 package day11.task2;
 
-public class Paladin extends Hero implements Healer, PhysAttack{
+public class Paladin extends Hero implements Healer, PhysAttack {
     private int healthHimself;
 
-    public Paladin(){
+    public Paladin() {
         this.healthHimself = 25;
         super.setPhysAtt(15);
         super.setPhysDef(50);
@@ -21,17 +21,14 @@ public class Paladin extends Hero implements Healer, PhysAttack{
 
     @Override
     public void healHimself() {
-        this.setHealth(this.getHealth()+this.getHealthHimself());
-    }
-
-    @Override
-    public void physAttack(Hero hero) {
-        hero.setHealth(hero.getHealth()-this.getPhysAtt()*(100- hero.getPhysDef())/100);
+        this.setHealth(this.getHealth() + this.getHealthHimself());
+        System.out.println(this);
     }
 
     @Override
     public void healTeammate(Hero hero) {
-        hero.setHealth(hero.getHealth()+30);
+        hero.setHealth(hero.getHealth() + 30);
+        System.out.println(hero);
     }
 
     @Override

@@ -19,14 +19,12 @@ public class Magician extends Hero implements PhysAttack, MagicAttack{
         return super.getHealth();
     }
 
-    @Override
-    public void physAttack(Hero hero) {
-        hero.setHealth(hero.getHealth()-this.getPhysAtt()*(100- hero.getPhysDef())/100);
-    }
+
 
     @Override
     public void magicAttack(Hero hero) {
         hero.setHealth(hero.getHealth()-this.getMagicAtt()*(100- hero.getMagicDef())/100);
+        System.out.println(hero);
     }
 
     @Override
