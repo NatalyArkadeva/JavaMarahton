@@ -14,9 +14,8 @@ public class Task3 {
 
     public static List<Person> parseFileToObjList(File file) {
         List<Person> peoples = new ArrayList<>();
-        Scanner scanner = null;
         try {
-            scanner = new Scanner(file);
+            Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] people = line.split(",");
@@ -24,21 +23,19 @@ public class Task3 {
                     String[] nameAge = line.split(" ");
                     int age = Integer.parseInt(nameAge[1]);
                     if (age < 0) {
-                        try {
-                            throw new IllegalArgumentException();
-                        } catch (IllegalArgumentException e) {
-                            System.out.println("Некорректный входной файл");
-                        }
-                        return null;
-
+                        throw new IllegalArgumentException();
                     }
                     peoples.add(new Person(nameAge[0], age));
                 }
-                //peoples.add(new Person(info2[0],info2[1]));
             }
+            scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
+            return null;
         }
+
         return peoples;
     }
 }
